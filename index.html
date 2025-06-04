@@ -19,19 +19,26 @@
 <!-- HEADER -->
 
     <header class="header">
-        <div class="header__left-column">
-            <div class="header__logo">
-                <img src="./images/pulse-logo.svg" alt="pulse logo" class="header__logo__image">
-            </div>
-        </div>
-        <div class="header__right-column">
+        <div class="header__container"> <!-- Formerly "header__left-column" -->
             <nav class="nav">
-                <a href="#features" class="nav__link">Features</a>
-                <a href="#customerStories" class="nav__link">Customer Stories</a>
-                <a href="https://pulseapp.com/pricing" class="nav__link">Pricing</a>
-                <a href="#blog" class="nav__link">Blog</a>
-                <a href="#contact" class="nav__link">Contact</a>
-                <button type="button" class="button__signUp">Sign Up</button>
+                <a href="https://pulseapp.com/" class="header__logo__image">
+                    <img src="./images/pulse-logo.svg" alt="pulse logo">
+                </a>
+                <ul class="nav__list"> <!-- Formerly "header__right-column" -->
+                    <li class="nav__list-link">
+                        <a href="#features" class="nav__link">Features</a>
+                    </li>   
+                        <a href="#customerStories" class="nav__link">Customer Stories</a>
+                    <li class="nav__list-link">
+                        <a href="https://pulseapp.com/pricing" class="nav__link">Pricing</a>
+                    </li>
+                    <li class="nav__list-link">    
+                        <a href="#blog" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__list-link">
+                        <a type="button" class="button__signUp">Sign Up</a>
+                    </li>
+                </ul>    
             </nav>
         </div>
     </header>
@@ -42,7 +49,7 @@
     <section class="hero__main">
         <div class="hero__text">
             <h1 class="hero__text-top">
-                Try Pulse free <br>for 30 days.</br>
+                Try Pulse free for <br>30 days.</br>
             </h1>
             <p class="hero__text-bottom">See why Pulse is the best way to monitor your cash flow. Sign up for any plan and try Pulse absolutely free for 30 days.</p>
         </div>
@@ -208,8 +215,10 @@
         <div class="footer__container-center">
              <div class="footer__left-column">
                 <img src="./images/pulse-logo.svg" alt="pulse logo" class="footer__logo__image">
-                <button type="button" class="button__signUp-footer">Sign Up for a Free 30-Day Trial</button>
-             </div>
+                    <p class="button__container">
+                        <button type="button" class="button__signUp-footer">Sign Up for a Free 30-Day Trial</button>
+                    </p>
+            </div>
              <div class="footer__right-column">
                 <ul class="footer__right-first">
                     <li class="footer__heading">

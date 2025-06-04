@@ -1,63 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body, html {
-    margin: 0;
-    padding: 0;
-    background: #eafaf1;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
-    scroll-behavior: smooth;
-    line-height: 1.5;
+* {
+    border: 0 solid #d6dae5;
+    border-top-width: 0px;
+    border-top-style: solid;
+    border-top-color: rgb(214, 218, 229);
+    border-right-width: 0px;
+    border-right-style: solid;
+    border-right-color: rgb(214, 218, 229);
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(214, 218, 229);
+    border-left-width: 0px;
+    border-left-style: solid;
+    border-left-color: rgb(214, 218, 229);
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    box-sizing: inherit;
 }
 
-.footer {
-    background-color: #080c16;
+body, html {
+    margin: 0;
+    box-sizing: inherit;
+    background-color: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #464951;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    border: 0 solid #d6dae5;
 }
 
 .header {
-    position: relative;
+    border-bottom-width: 1px;
+}
+
+/* .header {
+    /* position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    /* padding: 1rem 1.5rem; */
+    /* padding: 1rem 1.5rem;
     width: 100%;
-    /* margin: 0 auto; */
-}
+    /* margin: 0 auto;
+} */
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 770px) {
     .header {
-        background-color: #fff;
+        background-color: #eafaf1;
     }
 }
 
-.header__left-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 0;
-    flex-wrap: wrap;
-    gap: 2rem;
+/* Updated from "header__left-column" */
+.header__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
 }
 
-@media screen and (min-width: 460px) {
+/* @media screen and (min-width: 460px) {
     .header__left-column {
         padding-right: 5rem;
     }
-}
+} */
 
-@media screen and (min-width: 600px) {
+/* JK: Alter this for responsive heading */
+@media screen and (min-width: 770px) {
     .header__left-column {
-        padding-right: 7rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
     .header__left-column {
         gap: 7rem;
         justify-content: start;
         padding-right: 10rem;
     }
+} */
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ASK HARRY - Trying to make the active nav link black*/
+.nav a:active-item {
+    color: black;
 }
 
 .header__logo {
@@ -67,11 +103,29 @@ body, html {
 }
 
 .header__logo__image {
-    width: auto;
-    height: auto;
+    /* width: auto;
+    height: auto; */
+    color: #dadbdc;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    font-weight: 800;
+    text-decoration: underline;
+    margin-right: 2.5rem;
 }
 
-.header__right-column {
+
+/* Updated from "header__right-column" */
+.nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+/* .header__right-column {
     display: flex;
     position: relative;
     align-items: center;
@@ -79,44 +133,28 @@ body, html {
     gap: 1rem;
     font-size: 0.8rem;
     font-weight: bolder;
-    }
+} */
 
-@media screen and (min-width: 600px) {
-    .header__left-column {
-        position: relative;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .header__left-column {
-        position: initial;
-    }
-}
-
-.header__right-column i {
+nav__list i {
     color: #fff;
     font-size: 1.25rem;
 }
 
-.header__right-column i:hover {
+.nav__list i:hover {
     cursor: pointer;
 }
 
-.nav {
+.nav__list-link {
     display: flex;
-    gap: 2rem;
-    padding-top: 0.2rem;
-}
-
-/* ASK HARRY - Trying to make the active nav link black*/
-.nav a:active-item {
-    color: black;
+    flex-wrap: wrap;
+    margin-right: 2.5rem;
 }
 
 .nav__link {
     color: #00ad6a;
     font-weight: 800;
     text-decoration: none;
+    
 }
 
 .nav__link:hover {
@@ -195,6 +233,7 @@ body, html {
     font-size: 3.75rem;
     text-align: center;
     margin-bottom: 1rem;
+    line-height: 1;
 }
 
 /* @media screen and (min-width: 1000px) {
@@ -247,13 +286,15 @@ body, html {
 
 .pricing__blocks {
     display: flex;
+    /* flex-wrap: wrap; */
     align-items: center;
     width: 100%;
     margin-left: -1rem;
     margin-right: -1rem;
+
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .pricing__blocks {
         flex-wrap: wrap;
     }
@@ -305,7 +346,7 @@ body, html {
     background-color: transparent;
 }
 
-.middle__block, .right__block {
+.middle__block {
     display: flex;
     width: 33%;
 }
@@ -500,18 +541,70 @@ body, html {
     font-size: 1.2em;
 }
 
+/* ASK HARRY: Why is this affecting the middle list, but not the right list? */
 .pricing__list {
-    position: relative;
+    position: absolute;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-
+    /* padding-right: 0; */
 }
 
+.right__block {
+    display: flex;
+    width: 33%;
+    /* border: 1px solid #d6dae5; */
+}
 
+.right__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    padding: 3rem 2rem 1.5rem 2rem;
+    /* border: 1px solid #d6dae5; */
+}
+
+.right__info {
+    background-color: #f2f3f3;
+    color: #464951;
+    position: absolute;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1.25rem 2rem 1.5rem 2rem;
+    line-height: 1.3;
+    border-bottom: 1px solid #d6dae5;
+    top: 0;
+    right: 0;
+}
+
+.right__block-headingtext {
+    display: block;
+    letter-spacing: -1.5px;
+    font-size: 2.25rem;
+    color: #00ad6a;
+    line-height: 1;
+    margin-top: 4rem;
+}
+
+.right__block-cost {
+    font-size: 1.5rem;
+    color: #83858a;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
 
 .right__block-list {
     list-style: none;
-    padding: 01;
+    text-align: left;
+    letter-spacing: -0.5px;
+    padding: 0;
+    margin-bottom: 1rem;
 }
 
 .right__block-list li {
@@ -526,6 +619,14 @@ body, html {
     left: 0;
     color: purple;
     font-size: 1.2em;
+}
+
+.right__plus-text {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    font-weight: 700;
 }
 
 .subvert__container {
@@ -619,19 +720,32 @@ body, html {
     color: #464951;
 }
 
-faq__one .Fa
+/* ASK HARRY: Does something like this break the program? */
+/* faq__one .Fa */
 
 /* FOOTER */
+
+.footer {
+    background-color: #080c16;
+}
 
 .footer__container {
     color: #464951;
     width: 100%;
     max-width: 1200px;
-    padding: 0 1.5rem;
-    margin: 0 auto;
+    padding: 0 1.5rem 0 1.5rem;
+    margin: 0 auto 0 auto;
 }
 
 .footer__container-center {
+    display: flex;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+/* .footer__container-center {
     display: flex;
     flex-wrap: wrap;
     margin: -16px;
@@ -640,6 +754,14 @@ faq__one .Fa
     padding-bottom: 6rem;
     border: 0 solid #d6dae5;
     box-sizing: inherit;
+} */
+
+.footer__left-column {
+    width: 50%;
+    text-align: left;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .footer__logo__image {
@@ -660,7 +782,6 @@ faq__one .Fa
     height: auto;
     padding: 1rem 2rem;
     color: #080c16;
-    border-color: #00ad6a;
     background-color: #00ad6a;
     border: none;
     cursor: pointer;
@@ -692,9 +813,6 @@ faq__one .Fa
     box-sizing: inherit;
 }
 
-@media screen and (min-width: 600px) {
-    width: 50%;
-}
 .footer__heading {
     position: relative;
     font-weight: 700;
