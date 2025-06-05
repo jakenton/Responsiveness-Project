@@ -35,6 +35,7 @@ body, html {
 
 .header {
     border-bottom-width: 1px;
+    border: none;
 }
 
 /* .header {
@@ -51,26 +52,24 @@ body, html {
 @media screen and (min-width: 770px) {
     .header {
         background-color: #eafaf1;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }
 
 /* Updated from "header__left-column" */
 .header__container {
+    display: grid;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
 }
 
-/* @media screen and (min-width: 460px) {
-    .header__left-column {
-        padding-right: 5rem;
-    }
-} */
-
 /* JK: Alter this for responsive heading */
 @media screen and (min-width: 770px) {
-    .header__left-column {
+    .header__container {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
@@ -123,6 +122,7 @@ body, html {
     padding: 0;
     margin: 0;
     width: auto;
+    position: relative;
 }
 
 /* .header__right-column {
@@ -154,7 +154,7 @@ nav__list i {
     color: #00ad6a;
     font-weight: 800;
     text-decoration: none;
-    
+    background-color: transparent;
 }
 
 .nav__link:hover {
@@ -162,6 +162,37 @@ nav__list i {
 }
 
 .button__signUp {
+    font-size: 1rem;
+    padding: 0.25rem 1rem;
+    line-height: 1.5;
+    height: auto;
+    color: #00ad6a;
+    border-color: #00ad6a;
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+    text-decoration: none;
+    border-width: 2px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 2.5rem;
+}
+
+.button__signUp::before {
+    display: none;
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    background-color: transparent;
+    transform: translate3d(-5px, 5px, -1px);
+    transform-style: preserve-3d;
+}
+
+/* .button__signUp {
     font-size: 1rem;
     text-align: center;
     text-decoration: none;
@@ -177,41 +208,57 @@ nav__list i {
     cursor: pointer;
     transform: translate3d(-5px, 5px, -1px);
     transform-style: preserve-3d;
+} */
+
+.button__signUp:hover {
+    color: #00ad6a;
+    box-shadow: -5px 5px #00ad6a;
+    transform: translate3d(5px, -5px, 0);
 }
 
-/* ASK HARRY: Making is so that the button shadow is static */
-.button__signUp:hover {
+.button__signUp:hover::before {
     color: #00ad6a;
     box-shadow: -5px 5px #dadbdc;
     transform: translate3d(5px, -5px, 0);
 }
 
-
 /* HERO */
 
-.hero__main {
-    border-bottom-width: 4px;
-    color: #464951;
+#content {
+    display: block;
 }
 
+.hero__main {
+    border-bottom-width: 1px;
+    background-color: #eafaf1;
+}
+
+/* JK: The Hero Text needs to be more responsive */
 .hero__text {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    padding-bottom: 1rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1.5rem 1rem 1.5rem;
+    padding: 1.5rem;
 }
 
 @media screen and (min-width: 1000px) {
     .hero__text {
-        display: flex;
         padding-bottom: 2.5rem;
         margin-bottom: 2.5rem;
         justify-content: center;
+        display: flex;
+    }
+}
+
+.hero__text-center {
+    width: 100%;
+    max-width: 600px;
+}
+
+@media screen and (min-width: 1000px) {
+    .hero__text-center {
+        text-align: center;
     }
 }
 
@@ -232,16 +279,21 @@ nav__list i {
     color: #080c16;
     font-size: 3.75rem;
     text-align: center;
+    margin: 0;
     margin-bottom: 1rem;
     line-height: 1;
 }
 
-/* @media screen and (min-width: 1000px) {
+.hero__top-break {
+    display: inline-block;
+}
+
+@media screen and (min-width: 1000px) {
     .hero__text-top {
         font-size: 3.75rem;
         margin-bottom: 3rem;
     }
-} */
+}
 
 /* .hero__text-top {
     display: flex;
@@ -259,7 +311,7 @@ nav__list i {
 .hero__text-bottom {
     color: #080c16;
     font-size: 1.125rem;
-    text-align: center;
+    margin: 0;
     margin-bottom: 0;
 }
 
@@ -277,34 +329,35 @@ nav__list i {
 } */
 
 .hero__container {
-    color: #464951;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    margin: 0 auto 0 auto;
+    padding: 0 1.5rem 0 1.5rem;
 }
 
 .pricing__blocks {
-    display: flex;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    width: 100%;
     margin-left: -1rem;
     margin-right: -1rem;
-
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1000px) {
     .pricing__blocks {
-        flex-wrap: wrap;
-    }
+        display: flex;
+        align-items: center;
+    } 
 }
 
 .left__block {
-    display: flex;
-    color: #464951;
-    padding: 2rem;
-    width: 33%;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .left__block {
+        width: 33.33333%;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+    } 
 }
 
 .left__container {
@@ -322,19 +375,25 @@ nav__list i {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     margin-top: 0;
+    line-height: 1.5;
 }
 
 .left__block-list {
     display: block;
-    color: #464951;
     font-size: 1rem;
+    margin: 0;
     margin-bottom: 1rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
     padding: 0;
 }
 
+@media screen and (min-width: 1000px) {
+    .left__block-list {
+        margin-left: 1rem;
+    }
+}
+
 .left__block-endtext {
-    margin-bottom: 0;
     font-size: 1rem;
     margin: 0;
 }
@@ -641,7 +700,7 @@ nav__list i {
     padding: 0 1.5rem;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 770px) {
     .subvert__container {
         padding-top: 6rem;
         padding-bottom: 6rem;
@@ -690,7 +749,7 @@ nav__list i {
     color: #464951;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 770px) {
     .container__faq {
         padding-top: 6rem;
         padding-bottom: 5rem;
