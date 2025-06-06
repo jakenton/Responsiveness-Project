@@ -405,12 +405,40 @@ nav__list i {
     background-color: transparent;
 }
 
-.middle__block {
-    display: flex;
-    width: 33%;
+@media screen and (min-width: 1000px) {
+    .middle__block {
+        display: flex;
+        width: 33.33333%;
+    }
 }
 
 .middle__animation {
+    border-color: #00ad6a;
+    border-radius: 8px 8px 0 0;
+    text-decoration: none;
+    color: #464951;
+    display: flex;
+    flex-direction: column;
+    border-width: 1px;
+    background-color: #fff;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 999px) {
+    .middle__animation {
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__animation {
+        text-align: center;
+    }
+}
+
+/* .middle__animation {
     color: #464951;
     text-align: center;
     border: 1px solid #00ab6a;
@@ -420,9 +448,25 @@ nav__list i {
     display: flex;
     border-width: 1px;
     background-color: #fff
-}
+} */
 
 .middle__container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__container {
+        padding: 3rem 2rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* .middle__container {
     color: #464951;
     position: relative;
     overflow: hidden;
@@ -433,22 +477,29 @@ nav__list i {
     display: flex;
     flex-direction: column;
     padding: 3rem 2rem 1.5rem 2rem
-}
+} */
 
 .middle__recommended {
     border: none;
     border-radius: 8px 8px 0 0;
     width: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.75rem;
     color: #fff;
+    padding: 0.5rem 0;
     text-align: center;
     font-weight: 700;
     background-color: #00ab6a;
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__recommended {
+        right: 0;
+        top: 0;
+        position: absolute;
+        padding: 0.25rem 0;
+    }
 }
 
 /* .middle__recommended {
@@ -469,18 +520,42 @@ nav__list i {
     box-sizing: inherit;
 } */
 
+@media screen and (max-width: 999px) {
+    .middle__upper {
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__upper {
+        text-align: center;
+    }    
+}
+
 .middle__block-headingtext {
-    display: block;
-    font-size: 3rem;
-    color: #00ab6a;
     letter-spacing: -1.5px;
+    font-size: 2.25rem;
+    color: #00ad6a;
     line-height: 1;
-    font-weight: 700;
-    text-align: center;
-    justify-content: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-top: 1rem;
+    font-weight: 800;
+}
+
+@media screen and (min-width: 320px) {
+    .middle__block-headingtext {
+        display: inline-block;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__block-headingtext {
+        display: block;
+        font-size: 3rem;
+        padding: 0 1rem;
+        margin-top: 1rem;
+    }    
 }
 
 /* .middle__block-headingtext {
@@ -495,15 +570,33 @@ nav__list i {
 } */
 
 .middle__block-cost {
-    font-size: 1.5rem;
-    color: #83858a;
-    text-align: center;
-    font-weight: 400;
     letter-spacing: -0.5px;
-    padding-left: 0.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    color: #83858a;
+    margin: 0.5rem 0;
     line-height: 1;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 320px) {
+    .middle__block-cost {
+        display: inline-block;
+        font-size: 1.25rem;
+    }    
+}
+
+@media screen and (min-width: 480px) {
+    .middle__block-cost {
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__block-cost {
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }    
 }
 
 /* .middle__block-cost {
@@ -518,9 +611,15 @@ nav__list i {
 } */
 
 .signUp__button {
-    display: block;
-    text-align: center;
     margin-top: auto;
+    display: none;
+    font-weight: 400;
+}
+
+@media screen and (min-width: 1000px) {
+    .signUp__button {
+        display: block;
+    }    
 }
 
 /* .signUp__button {
@@ -547,15 +646,15 @@ nav__list i {
     background-color: #fff
 }
 
-.middle__signUp-animation, .right__signup-animation {
-    display: inline-block;
-    font-size: 1.25rem;
-    font-weight: 700;
-    background-color: #1fe374;
-    padding: 0.5rem 2rem 0.75rem 2rem;
-    margin-bottom: 2rem;
+.middle__signUp-animation, .right__signUp-animation {
     transform: scale(1);
     transition: all 0.05s ease-in-out;
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem 0.75rem 2rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    background-color: #1fe374
+
 }
 
 .middle__signUp-animation:hover, .right__signup-animation:hover {
@@ -571,27 +670,51 @@ nav__list i {
     line-height: 1.15;
 }
 
+@media screen and (max-width: 999px) {
+    .middle__plus-text {
+        margin-top: 2rem;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__plus-text {
+        text-align: center;
+    }    
+}
+
 /* Note: Going forward, make sure to make classes consistent to reduce the amount of code */
 .middle__block-list {
     list-style: none;
     text-align: left;
     letter-spacing: -0.5px;
     padding: 0;
-    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 999px) {
+    .middle__block-list {
+        padding: 0 2rem 1rem 2rem;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .middle__block-list {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }    
 }
 
 .middle__block-list li {
     position: relative;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     letter-spacing: -0.5px;
     text-align: left;
-    font-weight: 400;
+    font-weight: 400; */
 }
 
 .middle__block-list li:before {
     content: url(./images/icon-check-bullet.svg);
-    /* position: absolute; */
+    /* position: relative; */
     left: -14px;
     top: 14px;
     width: 12px;
