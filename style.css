@@ -406,7 +406,7 @@ nav__list i {
 }
 
 @media screen and (min-width: 1000px) {
-    .middle__block {
+    .middle__block, .right__block {
         display: flex;
         width: 33.33333%;
     }
@@ -421,7 +421,7 @@ nav__list i {
     flex-direction: column;
     border-width: 1px;
     background-color: #fff;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 999px) {
@@ -434,6 +434,32 @@ nav__list i {
 
 @media screen and (min-width: 1000px) {
     .middle__animation {
+        text-align: center;
+    }
+}
+
+.right__animation {
+    border-color: #00ad6a;
+    border-radius: 8px 8px 0 0;
+    text-decoration: none;
+    color: #464951;
+    display: flex;
+    flex-direction: column;
+    border-width: 1px;
+    background-color: #fff;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 999px) {
+    .right__animation {
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .right__animation {
         text-align: center;
     }
 }
@@ -635,18 +661,19 @@ nav__list i {
     transition: all 0.05s ease-in-out;
 } */
 
-.right__animation {
-    color: #464951;
-    text-align: center;
-    border: 1px solid #464951;
-    text-decoration: none;
-    flex-direction: column;
-    display: flex;
-    border-width: 1px;
-    background-color: #fff
+.signUp__button-hidden {
+    padding: 1rem;
+    display: block;
+    font-weight: 400;
 }
 
-.middle__signUp-animation, .right__signUp-animation {
+@media screen and (min-width: 1000px) {
+    .signUp__button-hidden {
+        display: none;
+    }    
+}
+
+.signUp__animation {
     transform: scale(1);
     transition: all 0.05s ease-in-out;
     font-size: 1.25rem;
@@ -654,15 +681,28 @@ nav__list i {
     margin-bottom: 2rem;
     display: inline-block;
     background-color: #1fe374
-
 }
 
-.middle__signUp-animation:hover, .right__signup-animation:hover {
+.signUp__animation:hover {
     transform: scale(1.1);
     transform: scale(1.1);
 }
 
-.middle__plus-text {
+.signUp__animation-hidden {
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 0.5rem 2rem 0.75rem 2rem;
+    font-weight: 800;
+    background-color: #1fe374
+}
+
+.signUp__animation-hidden:hover {
+    transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.middle__plus-text, .right__plus-text {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -723,18 +763,11 @@ nav__list i {
     font-size: 1.2em;
 }
 
-/* ASK HARRY: Why is this affecting the middle list, but not the right list? */
 .pricing__list {
     position: absolute;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     /* padding-right: 0; */
-}
-
-.right__block {
-    display: flex;
-    width: 33%;
-    /* border: 1px solid #d6dae5; */
 }
 
 .right__container {
@@ -786,6 +819,46 @@ nav__list i {
     text-align: left;
     letter-spacing: -0.5px;
     padding: 0;
+}
+
+@media screen and (max-width: 999px) {
+    .right__block-list {
+        padding: 0 2rem 1rem 2rem;
+    }    
+}
+
+@media screen and (min-width: 1000px) {
+    .right__block-list {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }    
+}
+
+.right__block-list li {
+    position: relative;
+    /* padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    text-align: left;
+    font-weight: 400; */
+}
+
+.right__block-list li:before {
+    content: url(./images/icon-check-bullet.svg);
+    /* position: relative; */
+    left: -14px;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+    color: purple;
+    font-size: 1.2em;
+}
+
+/* .right__block-list {
+    list-style: none;
+    text-align: left;
+    letter-spacing: -0.5px;
+    padding: 0;
     margin-bottom: 1rem;
 }
 
@@ -797,33 +870,22 @@ nav__list i {
 
 .right__block-list li:before {
     content: url(./images/icon-check-bullet.svg);
-    /* position: absolute; */
+    position: absolute;
     left: 0;
     color: purple;
     font-size: 1.2em;
-}
-
-.right__plus-text {
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    line-height: 1.15;
-    font-weight: 700;
-}
+} */
 
 .subvert__container {
-    background-color: #eafaf1;
-    justify-self: center;
     justify-content: center;
-    align-items: center;
     display: flex;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 3rem 1.5rem;
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1000px) {
     .subvert__container {
         padding-top: 6rem;
         padding-bottom: 6rem;
@@ -865,41 +927,61 @@ nav__list i {
 
 /* FAQ */
 .container__faq {
-    background-color: white;
+    padding: 3rem 1.5rem 2rem 1.5rem;
     width: 100%;
     max-width: 1200px;
-    padding: 0 1.5rem;
-    color: #464951;
+    margin: 0 auto;
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1000px) {
     .container__faq {
         padding-top: 6rem;
         padding-bottom: 5rem;
     }
 }
 
+.faq__text {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    font-weight: 800;
+    color: #080c16;
+}  
+
+@media screen and (min-width: 1000px) {
+    .faq__text {
+        font-size: 3rem;
+    }
+}
+
+.faq__block-set {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    flex-wrap: wrap;
+    display: flex;
+}
+
 .faq__block {
     padding: 1.5rem 1rem;
-    border: 0 solid #d6dae5;
-    box-sizing: inherit;
-    color: #464951;
+}
+
+@media screen and (min-width: 999px) {
+    .faq__block {
+        width: 50%;
+    }
 }
 
 .faq__question {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #080c16;
-    border: 0 solid #d6dae5;
-    box-sizing: inherit;  
+    margin: 0;  
 }
 
 .faq__answer {
     margin: 0;
     font-size: 1.125rem;
-    border: 0 solid #d6dae5;
-    box-sizing: inherit;
-    color: #464951;
 }
 
 /* ASK HARRY: Does something like this break the program? */
