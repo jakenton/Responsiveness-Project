@@ -1001,12 +1001,11 @@ nav__list i {
     margin: 0 auto 0 auto;
 }
 
-.footer__container-center {
-    display: flex;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
+@media screen and (min-width: 768px) {
+    .footer__container-center {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 }
 
 /* .footer__container-center {
@@ -1021,20 +1020,114 @@ nav__list i {
 } */
 
 .footer__left-column {
-    width: 50%;
-    text-align: left;
-    margin-bottom: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__left-column {
+        display: flex;
+    }
+}
+
+.footer__left-center {
+    text-align: center;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+    .footer__left-center {
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__left-center {
+        margin-bottom: 0;
+        width: 50%;
+        text-align: left;
+    }
+}
+
+.button__container {
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+    .button__container {
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+}
+
+.footer__pulse-logo {
+    display: inline-block;
+    color: #00ad6a;
+    font-weight: 800;
+    text-decoration: underline;
+    background-color: transparent;
+    font-size: 1.125rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__pulse-logo {
+        text-align: left;
+    }
+}
+
 .footer__logo__image {
-    position: relative;
-    align-items: center;
-    justify-content: center;
+    max-width: 100%;
+    height: auto;
+    border-style: solid;
+    text-align: 1.125rem;
+    font-size: 1.125rem;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__logo__image {
+        width: 10rem;
+    }
+}
+
+.button__signUp-footer::before {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    transform: translate3d(-5px, 5px, -1px);
+    transform-style: preserve-3d;
 }
 
 .button__signUp-footer {
+    font-size: 1rem;
+    border-width: 0;
+    background-image: linear-gradient(90deg, #00ab6a, #23ea76);
+    position: relative;
+    padding: 1rem 2rem;
+    font-weight: 800;
+    text-decoration: 0;
+    color: #062c27;
+    border-color: #fff;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .button__signUp-footer {
+        display: inline-block;
+    }
+}
+
+/* .button__signUp-footer {
     font-size: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -1052,52 +1145,95 @@ nav__list i {
     background: linear-gradient (90deg, #00ab6a, #23ea76) ;
     transform: translate3d(-5px, 5px, -1px);
     transform-style: preserve-3d;
-}
+} */
 
-/* ASK HARRY: Making is so that the button shadow is static */
+/* JK: When in doubt, remember to look at the pseudo elements */
 .button__signUp-footer:hover {
-    color: #00ad6a;
-    box-shadow: -5px 5px #dadbdc;
+    box-shadow: -5px 5px #464951;
     transform: translate3d(5px, -5px, 0);
-}
-
-.footer__heading {
-    color: white;
-    list-style: none;
-}
-
-.footer__link {
-    list-style: none;
 }
 
 .footer__right-column {
     display: flex;
     flex-wrap: wrap;
-    border: 0 solid #d6dae5;
-    box-sizing: inherit;
+    font-size: 1.125rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__right-column {
+        width: 50%;
+    }
+}
+
+.footer__right-first, .footer__right-second, .footer__right-third {
+    padding: 1rem;
+    list-style: none;
+    margin: 0;
+    font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__right-first, .footer__right-second, .footer__right-third {
+        width: 33.33333%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 .footer__heading {
-    position: relative;
-    font-weight: 700;
-    font-size: 1.125rem;
     color: #fff;
-    border: 0 solid #d6dae5;
-    margin-bottom: 1rem;
-    box-sizing: inherit;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
     list-style: none;
+    font-size: 1.125rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__heading {
+        margin-bottom: 1rem;
+    }
+}
+
+.footer__link {
+    margin-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .footer__link {
+        margin-bottom: 1rem;
+    }
+}
+
+.footer__link-link {
+    text-decoration: none;
+    color: #1fe374;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+/* LEGAL */
+.legal {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    padding-top: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+    .legal {
+        padding-bottom: 0.75rem;
+    }
+}
+
+.legal__container {
+    font-size: 0.75rem;
+    color: #83858a;
+    font-weight: 400;
 }
 
 .legal__textbox {
-    color: #83858a;
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    padding-right: 0;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: block;
 }
 
 .legal__textbox a {
