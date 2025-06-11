@@ -1155,12 +1155,19 @@ nav__list i {
 
 .footer__right-column {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     font-size: 1.125rem;
 }
 
 @media screen and (min-width: 1000px) {
     .footer__right-column {
+        width: 50%;
+   }
+}
+
+@media screen and (max-width: 999px) {
+    .footer__right-column {
+        margin: 0 auto;
         width: 50%;
     }
 }
