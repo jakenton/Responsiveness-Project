@@ -33,6 +33,11 @@ body, html {
     border: 0 solid #d6dae5;
 }
 
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
 .header {
     border-bottom-width: 1px;
     border: none;
@@ -231,6 +236,7 @@ nav__list i {
 .hero__main {
     border-bottom-width: 1px;
     background-color: #eafaf1;
+    margin: 0 auto;
 }
 
 /* JK: The Hero Text needs to be more responsive */
@@ -252,8 +258,10 @@ nav__list i {
 }
 
 .hero__text-center {
+    box-sizing: border-box;
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
 }
 
 @media screen and (min-width: 1000px) {
@@ -329,21 +337,23 @@ nav__list i {
 } */
 
 .hero__container {
+    box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 0 auto;
-    padding: 0 1.5rem 0 1.5rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .pricing__blocks {
     margin-left: -1rem;
     margin-right: -1rem;
+    align-items: center;
 }
 
 @media screen and (min-width: 1000px) {
     .pricing__blocks {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
     } 
 }
 
@@ -410,6 +420,11 @@ nav__list i {
         display: flex;
         width: 33.33333%;
     }
+}
+
+.right__animation {
+    border: 0 solid #d6dae5;
+    border-width: 1px;
 }
 
 .middle__animation {
@@ -596,6 +611,7 @@ nav__list i {
 } */
 
 .middle__block-cost {
+    display: inline-block;
     letter-spacing: -0.5px;
     color: #83858a;
     margin: 0.5rem 0;
@@ -927,6 +943,7 @@ nav__list i {
 
 /* FAQ */
 .container__faq {
+    box-sizing: border-box;
     padding: 3rem 1.5rem 2rem 1.5rem;
     width: 100%;
     max-width: 1200px;
@@ -990,6 +1007,7 @@ nav__list i {
 /* FOOTER */
 
 .footer {
+    box-sizing: border-box;
     background-color: #080c16;
 }
 
@@ -999,6 +1017,11 @@ nav__list i {
     max-width: 1200px;
     padding: 0 1.5rem 0 1.5rem;
     margin: 0 auto 0 auto;
+}
+
+.footer__container-center {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -1034,6 +1057,7 @@ nav__list i {
     text-align: center;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -1051,7 +1075,7 @@ nav__list i {
 }
 
 .button__container {
-    margin: 0;
+    margin: 0 auto;
     margin-bottom: 1rem;
     font-size: 1.125rem;
     text-align: center;
@@ -1080,6 +1104,8 @@ nav__list i {
 }
 
 .footer__logo__image {
+    display: block;
+    width: 8rem;
     max-width: 100%;
     height: auto;
     border-style: solid;
@@ -1107,6 +1133,7 @@ nav__list i {
 }
 
 .button__signUp-footer {
+    display: block;
     font-size: 1rem;
     border-width: 0;
     background-image: linear-gradient(90deg, #00ab6a, #23ea76);
@@ -1154,8 +1181,10 @@ nav__list i {
 }
 
 .footer__right-column {
+    padding: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     font-size: 1.125rem;
 }
 
@@ -1167,8 +1196,9 @@ nav__list i {
 
 @media screen and (max-width: 999px) {
     .footer__right-column {
-        margin: 0 auto;
-        width: 50%;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
     }
 }
 
@@ -1220,15 +1250,19 @@ nav__list i {
 
 /* LEGAL */
 .legal {
+    box-sizing: border-box;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
     padding-top: 0.75rem;
+    padding-bottom: 6rem;
+    line-height: 1.5rem;
 }
 
 @media screen and (min-width: 768px) {
     .legal {
+        align-items: center;
         padding-bottom: 0.75rem;
     }
 }
@@ -1241,6 +1275,7 @@ nav__list i {
 
 .legal__textbox {
     display: block;
+    align-items: center;
 }
 
 .legal__textbox a {
